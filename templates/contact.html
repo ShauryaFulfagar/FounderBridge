@@ -2,33 +2,56 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 <link rel="stylesheet" href="{{url_for('static', filename= 'css/contact.css')}}">
-<div class="contact-container">
-    <div class="contact-left">
-        <h2>Get In Touch</h2>
-        <form class="contact-form">
-            <div class="single-row">
-                <input type="text" placeholder="First Name" class="form-in mr">
-                <input type="text" placeholder="Last Name" class="form-in ml">
-            </div>
-            <div class="multiple-row">
-                <input type="email" placeholder="Email" class="form-in">
-                <textarea placeholder="Your Message" class="form-in"></textarea>
-                <input type="submit" id="submit"><label for="submit"><i class="fas fa-paper-plane"></i></label>
-            </div>
 
-        </form>
-    </div>
-    <div class="contact-right">
-        <h2>Contact Informations</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-phone-alt"></i>+919354761707</p>
-            <p><i class="fas fa-envelope"></i>shaurya.fulfagar@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
-        </div>
+<body>
+    <nav>
+        <div class="menu">
+            <input type="checkbox" id="respMenuCheck" />
+            <div class="logo"><a href="/">
+                    <h2 class="h2"><img src="{{url_for('static', filename='assets/img/favicon/logo.png')}}"
+                            style="width: 132px; height: 88px;">
+                    </h2>
+                </a></div>
+            <ul>
+                <label class="button cancel" for="respMenuCheck"><i class="fas fa-times"></i></label>
 
-        <div class="social-links">
-            <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+                <li><a href="/find">Find</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/auth">Sign in/ Sign up</a></li>
+            </ul>
+            <label class="button bars" for="respMenuCheck"><i class="fas fa-bars"></i></label>
         </div>
-    </div>
-</div>
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2>Get In Touch</h2>
+                <form class="contact-form">
+                    <div class="single-row">
+                        <input type="text" placeholder="First Name" class="form-in mr">
+                        <input type="text" placeholder="Last Name" class="form-in ml">
+                    </div>
+                    <div class="multiple-row">
+                        <input type="email" placeholder="Email" class="form-in">
+                        <textarea placeholder="Your Message" class="form-in"></textarea>
+                        <input type="submit" id="submit"><label for="submit"><i class="fas fa-paper-plane"></i></label>
+                    </div>
+    
+                </form>
+            </div>
+            <div class="contact-right">
+                <h2>Contact Informations</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i>+919354761707</p>
+                    <p><i class="fas fa-envelope"></i>shaurya.fulfagar@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                </div>
+    
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    
+    </nav>
+</body>

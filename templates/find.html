@@ -167,7 +167,7 @@
     <nav>
         <div class="menu">
             <input type="checkbox" id="respMenuCheck" />
-            <div class="logo"><a href="#">
+            <div class="logo"><a href="/">
                     <h2 class="h2"><img src="{{url_for('static', filename='assets/img/favicon/logo.png')}}"
                             style="width: 132px; height: 88px;">
                     </h2>
@@ -175,9 +175,10 @@
             <ul>
                 <label class="button cancel" for="respMenuCheck"><i class="fas fa-times"></i></label>
 
-                <li><a href="#">Find</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Sign in/ Sign up</a></li>
+                <li><a href="/find">Find</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/auth">Sign in/ Sign up</a></li>
             </ul>
             <label class="button bars" for="respMenuCheck"><i class="fas fa-bars"></i></label>
         </div>

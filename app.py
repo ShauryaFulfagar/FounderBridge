@@ -18,12 +18,6 @@ db = firestore.client()
 def homePage():
     return render_template('index.html')
 
-# Route for the authentication page
-@app.route('/auth')
-def authPage():
-    return render_template('auth.html')
-
-
 @app.route('/contact')
 def contactPage():
     return render_template('contact.html')
@@ -31,24 +25,27 @@ def contactPage():
 @app.route('/find')
 def findPage():
     # Check if user is authenticated
-    try:
-        id_token = request.cookies.get("token")
-        decoded_token = auth.verify_id_token(id_token)
-        user_id = decoded_token['uid']
+    #try:
+    #id_token = request.cookies.get("token")
+    #decoded_token = auth.verify_id_token(id_token)
+    #user_id = decoded_token['uid']
 
-        # Retrieve data from Firestore
-        docs = db.collection('cards').list_documents()
+    # Retrieve data from Firestore
+    docs = db.collection('cards').list_documents()
+    data = []
+    for doc in docs:
+        doc_data = doc.get().to_dict()
+        data.append(doc_data)
 
-        data = []
-        for doc in docs:
-            doc_data = doc.get().to_dict()
-            data.append(doc_data)
+    return render_template('find.html', data=data)
 
-        return render_template('find.html', data=data)
-
-    except Exception as e:
+    #except Exception as e:
         # Redirect to authentication page if user is not authenticated
-        return redirect(url_for('authPage'))
+        #return redirect(url_for('authPage'))
+# Route for the authentication page
+@app.route('/auth')
+def authPage():
+    return render_template('auth.html')
 
 # Function to push data to Firestore
 def push_data_to_firestore(data):
@@ -58,6 +55,10 @@ def push_data_to_firestore(data):
 
     print("Data has been successfully pushed to Firestore.")
 
+
+@app.route('/events')
+def eventPage():
+    return render_template('events.html')
 # Sample data
 rawData = extData.rawData
 

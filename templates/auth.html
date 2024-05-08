@@ -9,40 +9,75 @@
 </head>
 
 <body>
-    <div class="main">
-        <div class="container a-container" id="a-container">
-            <form class="form" id="a-form" method="POST" action="">
-                <h2 class="form_title title">Create Account</h2>
-                <input class="form__input" type="text" placeholder="Name">
-                <input class="form__input" type="email" placeholder="Email">
-                <input class="form__input" type="password" placeholder="Password">
-                <button class="form__button button submit" type="submit">SIGN UP</button>
+    <div class="wrapper">
+        <div class="container">
+          <div class="sign-up-container">
+            <form>
+              <h1>Create Account</h1>
+              <div class="social-links">
+                <div>
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <span>or use your email for registration</span>
+              <input type="text" placeholder="Name">
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
+              <button class="form_btn">Sign Up</button>
             </form>
-        </div>
-        <div class="container b-container" id="b-container">
-            <form class="form" id="b-form" method="POST" action="/find">
-                <h2 class="form_title title">Sign in to Website</h2>
-                <input class="form__input" type="email" placeholder="Email" name="email">
-                <input class="form__input" type="password" placeholder="Password" name="password">
-                <button class="form__button button submit" type="submit">SIGN IN</button>
+          </div>
+          <div class="sign-in-container">
+            <form>
+              <h1>Sign In</h1>
+              <div class="social-links">
+                <div>
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                  <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <span>or use your account</span>
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
+              <button class="form_btn">Sign In</button>
             </form>
-        </div>
-        <div class="switch" id="switch-cnt">
-            <div class="switch__circle"></div>
-            <div class="switch__circle switch__circle--t"></div>
-            <div class="switch__container" id="switch-c1">
-                <h2 class="switch__title title">Welcome Back !</h2>
-                <p class="switch__description description">To keep connected with us please login with your personal
-                    info</p>
-                <button class="switch__button button switch-btn">SIGN IN</button>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay-left">
+              <h1>Welcome Back</h1>
+              <p>THIS IS SIMPLY A DEMO OF THE UI FIREBASE AUTH HAS BEEN DISABLED FOR DEMONSTRATION PURPOSES</p>
+              <button id="signIn" class="overlay_btn">Sign In</button>
             </div>
-            <div class="switch__container is-hidden" id="switch-c2">
-                <h2 class="switch__title title">Hello Friend !</h2>
-                <p class="switch__description description">Enter your personal details and start journey with us</p>
-                <button class="switch__button button switch-btn">SIGN UP</button>
+            <div class="overlay-right">
+              <h1>Hello, Friend</h1>
+              <p>THIS IS SIMPLY A DEMO OF THE UI FIREBASE AUTH HAS BEEN DISABLED FOR DEMONSTRATION PURPOSES</p>
+              <button id="signUp" class="overlay_btn">Sign Up</button>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    <script>const signUpBtn = document.getElementById("signUp");
+        const signInBtn = document.getElementById("signIn");
+        const container = document.querySelector(".container");
+        
+        signUpBtn.addEventListener("click", () => {
+          container.classList.add("right-panel-active");
+        });
+        signInBtn.addEventListener("click", () => {
+          container.classList.remove("right-panel-active");
+        });
+        </script>
 </body>
+
 
 </html>
